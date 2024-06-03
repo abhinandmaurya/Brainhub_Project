@@ -1,0 +1,330 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwapTok Clone</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100 p-4">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-2 bg-white min-h-screen p-4">
+                <div class="text-center">
+                    <h1>SwapTok</h1>
+                    <img src="https://s3-alpha-sig.figma.com/img/87d0/1744/cdfc2dc5c60ac4d2535f84187fc1e5fa?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=pANBuxl7WQjtDkgXuFRxLYB-HGftC0I2D3mJf2HD3Bp5YkYnoh0Beb5x4x7lubC6CXo4nXTS6SDI3mVxtmeEP~2SXy3n8tjENT6QsaAZcUDOxJc4dg9dYyHiVq32i4PJOFJL5SJ0iMON5K6wtgdsO838AnE5jPQ7qih5qwMQAN2-NYfvJMHZ7pPW4dJKLGvXSAOKbq2s5YXuZoKnyIWEOU-NJ67IXqie33jUODAa0juHv~xMTl0dWOlLm4rnzVWCZPPd8jQh9caXAE2Nv00I6QqvqHcrVduaaBZ7dEbiWt3GwSHPmPGnVE7TVuLbQxnqyFIrB0RBXS1BF1tiGqtJDQ__" alt="Profile Picture" class="rounded-full w-24 mx-auto">
+                    <h3 class="mt-2">Jeffrey Parke</h3>
+                    <p>Investor</p>
+                    <button id="Investor" class="btn btn-primary">Investor</button>
+                </div>
+                <ul class="mt-4">
+                    <li><a href="#" class="block py-2 px-4 text-Emerald-700 hover:bg-Emerald-200">Home</a></li>
+                    <li><a href="#" class="block py-2 px-4 text-Emerald-700 hover:bg-Emerald-200">Activity</a></li>
+                    <li><a href="#" class="block py-2 px-4 text-Emerald-700 hover:bg-Emerald-200">Wallet</a></li>
+                    <li><a href="#" class="block py-2 px-4 text-Emerald-700 hover:bg-Emerald-200">Notifications</a></li>
+                    <li><a href="#" class="block py-2 px-4 text-Emerald-700 hover:bg-Emerald-200">My Favorites</a></li>
+                    <li><a href="#" class="block py-2 px-4 text-Emerald-700 hover:bg-Emerald-200">Account</a></li>
+                    <li><a href="#" class="block py-2 px-4 text-Emerald-700 hover:bg-Emerald-200">Connect</a></li>
+                    <li><a href="#" class="block py-2 px-4 text-Emerald-700 hover:bg-Emerald-200">Fees</a></li>
+                    <li><a href="#" class="block py-2 px-4 text-Emerald-700 hover:bg-Emerald-200">Help</a></li>
+                    <li><a href="#" class="block py-2 px-4 text-Emerald-700 hover:bg-Emerald-200">Information</a></li>
+                    <li><a href="#" class="block py-2 px-4 text-Emerald-700 hover:bg-Emerald-200">Lead Trader</a></li>
+                    <li><a href="#" class="block py-2 px-4 text-Emerald-700 hover:bg-Emerald-200">Log Out</a></li>
+                </ul>
+            </div>
+            
+            <!-- Main Content -->
+         <div class="col-md-10 p-4">
+                <div class="flex justify-between items-center mb-4">
+                    <span>
+                    <a class="text-2xl font-bold">Signals</a>
+                    <a class="text-2xl font-bold">Channel</a>
+                    </span>
+                    <span>
+                    <button id="ConnectExchange" class="btn btn-primary">Connect Exchange</button>
+                    <button id="ConnectWallet" class="btn btn-primary">Connect Wallet</button>
+                    </span>
+         </div>
+         <!-- navbar -->
+        
+         <div class="flex justify-center bg-white shadow-lg py-3 rounded-lg">
+            <div class="flex space-x-3">
+                <div class="tab-item flex items-center space-x-2 cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 tab-active" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                    </svg>
+                    <span class="tab-active">Feed</span>
+                </div>
+                <div class="tab-item flex items-center space-x-2 cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 tab-inactive" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4H8l4-4 4 4h-3v4z" />
+                    </svg>
+                    <span class="tab-inactive">Trending</span>
+                </div>
+                <div class="tab-item flex items-center space-x-2 cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 tab-inactive" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 7h.01M12 7h.01M16 7h.01M21 13h-2a2 2 0 00-4 0h-4a2 2 0 00-4 0H3m18 0a2 2 0 11-4 0m-10 0a2 2 0 11-4 0m-4 0a2 2 0 11-4 0m18 0a2 2 0 11-4 0" />
+                    </svg>
+                    <span class="tab-inactive">Innovation</span>
+                </div>
+                <div class="tab-item flex items-center space-x-2 cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 tab-inactive" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                    </svg>
+                    <span class="tab-inactive">DeFi</span>
+                </div>
+                <div class="tab-item flex items-center space-x-2 cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 tab-inactive" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 7h.01M12 7h.01M16 7h.01M21 13h-2a2 2 0 00-4 0h-4a2 2 0 00-4 0H3m18 0a2 2 0 11-4 0m-10 0a2 2 0 11-4 0m-4 0a2 2 0 11-4 0m18 0a2 2 0 11-4 0" />
+                    </svg>
+                    <span class="tab-inactive">Metaverse</span>
+                </div>
+                <div class="tab-item flex items-center space-x-2 cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 tab-inactive" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 7h.01M12 7h.01M16 7h.01M21 13h-2a2 2 0 00-4 0h-4a2 2 0 00-4 0H3m18 0a2 2 0 11-4 0m-10 0a2 2 0 11-4 0m-4 0a2 2 0 11-4 0m18 0a2 2 0 11-4 0" />
+                    </svg>
+                    <span class="tab-inactive">NFT</span>
+                </div>
+                <div class="tab-item flex items-center space-x-2 cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 tab-inactive" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 7h.01M12 7h.01M16 7h.01M21 13h-2a2 2 0 00-4 0h-4a2 2 0 00-4 0H3m18 0a2 2 0 11-4 0m-10 0a2 2 0 11-4 0m-4 0a2 2 0 11-4 0m18 0a2 2 0 11-4 0" />
+                    </svg>
+                    <span class="tab-inactive">Fan Tokens</span>
+                </div>
+                <div class="tab-item flex items-center space-x-2 cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 tab-inactive" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 7h.01M12 7h.01M16 7h.01M21 13h-2a2 2 0 00-4 0h-4a2 2 0 00-4 0H3m18 0a2 2 0 11-4 0m-10 0a2 2 0 11-4 0m-4 0a2 2 0 11-4 0m18 0a2 2 0 11-4 0" />
+                    </svg>
+                    <span class="tab-inactive">Gaming</span>
+                </div>
+                <div class="tab-item flex items-center space-x-2 cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 tab-inactive" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 7h.01M12 7h.01M16 7h.01M21 13h-2a2 2 0 00-4 0h-4a2 2 0 00-4 0H3m18 0a2 2 0 11-4 0m-10 0a2 2 0 11-4 0m-4 0a2 2 0 11-4 0m18 0a2 2 0 11-4 0" />
+                    </svg>
+                    <span class="tab-inactive">ETF</span>
+                </div>
+                <div class="tab-item flex items-center space-x-2 cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 tab-inactive" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 7h.01M12 7h.01M16 7h.01M21 13h-2a2 2 0 00-4 0h-4a2 2 0 00-4 0H3m18 0a2 2 0 11-4 0m-10 0a2 2 0 11-4 0m-4 0a2 2 0 11-4 0m18 0a2 2 0 11-4 0" />
+                    </svg>
+                    <span class="tab-inactive">Layer 1 & 2</span>
+                </div>
+                <div class="tab-item flex items-center space-x-2 cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 tab-inactive" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 7h.01M12 7h.01M16 7h.01M21 13h-2a2 2 0 00-4 0h-4a2 2 0 00-4 0H3m18 0a2 2 0 11-4 0m-10 0a2 2 0 11-4 0m-4 0a2 2 0 11-4 0m18 0a2 2 0 11-4 0" />
+                    </svg>
+                    <span class="tab-inactive">Infrastructure</span>
+                </div>
+            </div>
+        </div>
+     <!-- Search Box -->
+ <div class="search-box">
+     <div class="mb-6">
+        <input type="text" placeholder="Search..." class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+    </div>
+
+    <!-- Sort By -->
+    <div class="mb-7">
+        <label for="sort" class="block text-sm font-medium text-gray-700"></label>
+        <select id="sort" name="sort" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-400 focus:border-blue-400 sm:text-sm rounded-md">
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+        </select>
+    </div>
+</div>
+<!-- */add more card*/ -->
+<div class="flex flex-wrap justify-center space-x-4 mt-3">
+        <!-- Card 1 -->
+    <div class="max-w-md bg-white rounded-card shadow-lg overflow-hidden mb-4">
+        <div class="p-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <img src="https://via.placeholder.com/40" alt="Profile Picture" class="profile-pic">
+                    <div class="ml-3">
+                        <p class="font-semibold">Daniel Lynch</p>
+                        <p class="text-sm text-gray-500">3 min ago</p>
+                    </div>
+                </div>
+                <button class="btn btn-outline-secondary btn-sm">Follow</button>
+            </div>
+            <div class="mt-4">
+                <img src="https://s3-alpha-sig.figma.com/img/d5b5/a1c5/7d0d82e3e813948c99761560808a174a?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=otHvwxuWmTi3a1HTjy2bysk3D92gzwhCNKqdh2unMz-S5sozFVw~miO6m6v3Sz9-a7BDy43eqVtOtaSQByXUFA1sNkhR2fnoS2uQu7ivU6sKX17vOHohxQzobqvjz9IZTSd~shKtN82f-6RTruT9IxoSRzcGPPBhXIcUSXoVwP69unLBSJ36FUg4pXF4cv5fK~u2jNsHzbA~ZaBpL4w3QXHsOHY043hU77S2y-appwF4YkUPHmktEFny8EAqfMyUBf8RinkXCZz14kjQpOG91lJjoI5DW8cFFtj63p6nNocxExjZkqJCy46wQe19DMmh1voF9lyTGkEURjLQLidxGg__" alt="Market Update" class="w-full rounded-lg">
+            </div>
+            <div class="mt-4">
+                <p class="font-bold text-lg">Market Update</p>
+                <div class="mt-2">
+                    <span class="badge badge-secondary">Signal</span>
+                    <span class="badge badge-secondary">Etherium</span>
+                    <span class="badge badge-secondary">Spot</span>
+                    <span class="badge badge-secondary">Trend analysis</span>
+                </div>
+            </div>
+            <div class="mt-4 flex items-center justify-between">
+                <div>
+                    <div class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6h6v13" />
+                        </svg>
+                        <span class="ml-2 font-semibold">ETH / USDT</span>
+                    </div>
+                    <p class="text-sm text-gray-500">1250 USDT</p>
+                </div>
+                <button class="btn btn-success">View</button>
+            </div>
+            <div class="mt-4 flex justify-between text-sm text-gray-500">
+                <p>Buy Range <span class="font-semibold">1,210 - 1,300 USDT</span></p>
+                <p>Issued Time <span class="font-semibold">3 min ago</span></p>
+            </div>
+        </div>
+    </div>
+    <!-- Card 2 -->
+    <div class="max-w-md bg-white rounded-card shadow-lg overflow-hidden mb-4">
+        <div class="p-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <img src="https://via.placeholder.com/40" alt="Profile Picture" class="profile-pic">
+                    <div class="ml-3">
+                        <p class="font-semibold">Jane Doe</p>
+                        <p class="text-sm text-gray-500">10 min ago</p>
+                    </div>
+                </div>
+                <button class="btn btn-outline-secondary btn-sm">Follow</button>
+            </div>
+            <div class="mt-4">
+                <img src="https://s3-alpha-sig.figma.com/img/768e/caf4/0c82f55b3f98adc19f19443274ba28d2?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ODab3JB~pKsO98z-1DFhgSArH8qjDHFy4-w2GoP23bLAm7zzCXtsC1iTJ3a~wlGSwaMhI8e8X6Zp55TumIq529zYlo6OGWQrAx0KZb1HzWB4bkXtZBudjkSzJeVEBdo48nbJyNAv4gwKfLEheV5DuMfMoxb2ONcnfI93WEYUWNlZBuiglcctCYpYbAEKwEmPEqiUulh40tVVJf5xUniO3DOhQEQgctBDhNL1q-tzcZYsaTUjw0T6uPnjuFkaERMVjTpoHct3cXqD8bP28OvejiMtLoeS2jwH97hUg6FFjmtyeB0ssNeFaVFpU0RSpgHkU58ME6~2i7KG4IrAz1jAQg__" alt="Market Update" class="w-full rounded-lg">
+            </div>
+            <div class="mt-4">
+                <p class="font-bold text-lg">Market Insight</p>
+                <div class="mt-2">
+                    <span class="badge badge-secondary">Trend</span>
+                    <span class="badge badge-secondary">Bitcoin</span>
+                    <span class="badge badge-secondary">Market</span>
+                    <span class="badge badge-secondary">Analysis</span>
+                </div>
+            </div>
+            <div class="mt-4 flex items-center justify-between">
+                <div>
+                    <div class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6h6v13" />
+                        </svg>
+                        <span class="ml-2 font-semibold">BTC / USD</span>
+                    </div>
+                    <p class="text-sm text-gray-500">45000 USD</p>
+                </div>
+                <button class="btn btn-success">View</button>
+            </div>
+            <div class="mt-4 flex justify-between text-sm text-gray-500">
+                <p>Buy Range <span class="font-semibold">44,000 - 46,000 USD</span></p>
+                <p>Issued Time <span class="font-semibold">10 min ago</span></p>
+            </div>
+        </div>
+    </div>
+    <!-- Card 3 -->
+    <div class="max-w-md bg-white rounded-card shadow-lg overflow-hidden mb-4">
+        <div class="p-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <img src="https://via.placeholder.com/40" alt="Profile Picture" class="profile-pic">
+                    <div class="ml-3">
+                        <p class="font-semibold">John Smith</p>
+                        <p class="text-sm text-gray-500">1 hour ago</p>
+                    </div>
+                </div>
+                <button class="btn btn-outline-secondary btn-sm">Follow</button>
+            </div>
+            <div class="mt-4">
+                <img src="https://s3-alpha-sig.figma.com/img/3a1c/181e/6b517f3cebcdb29a10013c7f0edb9f74?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=dtBhdMthhTqIGiBuZGRxa7TvQmv-mnfds11XyaKvJ344lkcUyiQvRuTPWk2z6Yy9sxGcgh6OpubRWza8qLvINv822oun92lnQlBwEzoULUV8p7aW117JEn5E4wDGGh~oTX6f2XZNrgG0qW5Ik1DXaFP8Xodt5Wc~CtS2~NAvEh-UQ0LVNWIiHzCwpLPUD9WN9b5h4yXiOsMUKyT~Uf1CRXJr6Mje6b55HAC4h5mV6l2nSZ1Cc~TRbIE~C~UtkKnoSr9RwrufiBkXMeXAMlpiCdtrhynnxWXZEgFXnmpYPnd5WniaEk1dPt0RzjHY8n1IB6C54kh5536UliZWV1Ligw__" alt="Market Update" class="w-full rounded-lg">
+            </div>
+            <div class="mt-4">
+                <p class="font-bold text-lg">Crypto News</p>
+                <div class="mt-2">
+                    <span class="badge badge-secondary">Update</span>
+                    <span class="badge badge-secondary">Altcoins</span>
+                    <span class="badge badge-secondary">Market</span>
+                    <span class="badge badge-secondary">News</span>
+                </div>
+            </div>
+            <div class="mt-4 flex items-center justify-between">
+                <div>
+                    <div class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6h6v13" />
+                        </svg>
+                        <span class="ml-2 font-semibold">ADA / USDT</span>
+                    </div>
+                    <p class="text-sm text-gray-500">2.5 USDT</p>
+                </div>
+                <button class="btn btn-success">View</button>
+            </div>
+            <div class="mt-4 flex justify-between text-sm text-gray-500">
+                <p>Buy Range <span class="font-semibold">2.3 - 2.7 USDT</span></p>
+                <p>Issued Time <span class="font-semibold">1 hour ago</span></p>
+            </div>
+        </div>
+    </div>
+    <!-- Card 4 -->
+    <div class="max-w-md bg-white rounded-card shadow-lg overflow-hidden mb-4">
+        <div class="p-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <img src="https://via.placeholder.com/40" alt="Profile Picture" class="profile-pic">
+                    <div class="ml-3">
+                        <p class="font-semibold">Alice Johnson</p>
+                        <p class="text-sm text-gray-500">2 hours ago</p>
+                    </div>
+                </div>
+                <button class="btn btn-outline-secondary btn-sm">Follow</button>
+            </div>
+            <div class="mt-4">
+                <img src="https://s3-alpha-sig.figma.com/img/2f7b/26a3/9e11a35249e1408e919520570386fe5d?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=TZhmJ6j1jCm6QGcB~xgW~tZ9fsb2CQwD5XXgdeP946rRrJ1MW5HFyi3ofhaZRaRlZwi9pYggN3WfCrsBvVT1nVFSDRTUjpUTpQ9ES0RXl0NwgMgxql3HgeRkOqexwdOg~zW9uOgCajYiPfpXmZkAwfwnDWvEi4cFsqhZ8pcJ3oAybPI2JOqmcTLoY~SilhrfM5ZQjCKFouQZQFDMxgbcCV-wGPUocHJWya3p~1Vvj4To~k2ynZzm-nDPYFmFBEEtl~Gj7k75tqFu56os~ipcVGnNfJkZ901pP8G6Z9IHIP~mTRsXq98EblazAgSnX6ZvmPAnEWNR5uHZX8eWM81ZUA__" alt="Market Update" class="w-full rounded-lg">
+            </div>
+            <div class="mt-4">
+                <p class="font-bold text-lg">Tech Analysis</p>
+                <div class="mt-2">
+                    <span class="badge badge-secondary">Tech</span>
+                    <span class="badge badge-secondary">Analysis</span>
+                    <span class="badge badge-secondary">Crypto</span>
+                    <span class="badge badge-secondary">Review</span>
+                </div>
+            </div>
+            <div class="mt-4 flex items-center justify-between">
+                <div>
+                    <div class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6h6v13" />
+                        </svg>
+                        <span class="ml-2 font-semibold">SOL / USDT</span>
+                    </div>
+                    <p class="text-sm text-gray-500">40 USDT</p>
+                </div>
+                <button class="btn btn-success">View</button>
+            </div>
+            <div class="mt-4 flex justify-between text-sm text-gray-500">
+                <p>Buy Range <span class="font-semibold">38 - 42 USDT</span></p>
+                <p>Issued Time <span class="font-semibold">2 hours ago</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</div>
+</div>
+ </div>
+              
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Custom JS -->
+    <script src="scripts.js"></script>
+</body>
+</html> -->
